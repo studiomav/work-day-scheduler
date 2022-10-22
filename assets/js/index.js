@@ -1,12 +1,13 @@
-//getting
+//getting page elements
 var timeContainer = $("#time-container");
 var curTimeContainer = $("#cur-day");
 
+//displaying the current date
 var curTime = moment().format("hh:mmA on DD-MM-YYYY");
 var curHour = moment().hour();
-
 curTimeContainer.text(`It is now ${curTime}`);
 
+//initial hour iteration logic for each row
 var h = 9;
 var i = 9;
 var ampm = "am";
@@ -26,7 +27,7 @@ while (h != 0)
     var newContent = document.createElement("input");
     newContent.classList.add("content", "center", "transparent");
     newContent.setAttribute("num", i - 9);
-    //load from storage
+    //load values from storage
     var v = localStorage.getItem(`item${i - 9}`);
     if (v != null)
     {
@@ -49,7 +50,7 @@ while (h != 0)
     //add elements to the page
     timeContainer.append(newRow);
 
-    //hour logic
+    //hour logic, h is 12-hour for displaying while i is 24-hour for less/greater-than comparison
     h++;
     i++;
     if (h > 12) {h = 1; ampm = "pm"};

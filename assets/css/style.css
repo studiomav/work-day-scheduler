@@ -35,17 +35,19 @@ textarea{
   display: flexbox;
   height: 80px;
   width: 100%;
-  border-radius: 2px;
-  border-style: solid;
+  border-radius: 1px;
+  border-style: dotted;
   border-color: gray;
+  border-radius: 15px;
 }
 
 .hour {
   width: 80px;
-  padding: 30px;
   background-color: #ffffff;
   color: #000000;
-  border: 1px dashed #000000;
+  border-right: 1px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 15px;
 }
 
 .past {
@@ -63,11 +65,16 @@ textarea{
   color: white;
 }
 
+.content
+{
+  flex: auto;
+}
+
 .save-btn {
-  padding: 30px;
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  width: 80px;
+  border-right: 1px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 15px;
   background-color: #06AED5;
   color: white;
 }
@@ -75,4 +82,11 @@ textarea{
 .save-btn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.center
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

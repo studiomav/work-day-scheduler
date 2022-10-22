@@ -9,6 +9,7 @@ curTimeContainer.text(`It is now ${curTime}`);
 
 var h = 9;
 var i = 9;
+var ampm = "am";
 while (h != 0)
 {
     //create the hourly row
@@ -18,13 +19,19 @@ while (h != 0)
 
     //create the hour element within our new row
     var newHour = document.createElement("span");
-    newHour.classList.add("hour");
-    newHour.innerHTML = h;
+    newHour.classList.add("hour", "center");
+    newHour.innerHTML = h + ampm;
     newRow.append(newHour);
+
+    //create hourly content field
+    var newContent = document.createElement("span");
+    newContent.classList.add("content", "center");
+    newContent.innerHTML = "Lorem Ipsum";
+    newRow.append(newContent);
 
     //create the save button for each row
     var newSaveBtn = document.createElement("span");
-    newSaveBtn.classList.add("save-btn")
+    newSaveBtn.classList.add("save-btn", "center")
     newSaveBtn.innerHTML = "save";
     newRow.append(newSaveBtn);
 
@@ -39,6 +46,6 @@ while (h != 0)
     //hour logic
     h++;
     i++;
-    if (h > 12) h = 1;
+    if (h > 12) {h = 1; ampm = "pm"};
     if (h == 6) h = 0;
 }
